@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Impact of Technology on Society</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>The Impact of Technology on Society</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro fade-in">
+      <img src="images/saa.jpg" alt="Technology" />
+      <p>
+        Technology has revolutionized the way we live, work, and interact. While it brings many advantages, it also has some drawbacks.
+      </p>
+    </section>
+
+    <section class="positive fade-in">
+      <h2>Positive Effects</h2>
+      <ul>
+        <li>Improved communication through social media and smartphones</li>
+        <li>Advancements in medical technology save lives</li>
+        <li>Increased access to education and information</li>
+        <li>Automation improves efficiency in industries</li>
+      </ul>
+      <img src="images/tt.jpg" alt="Positive Effects" />
+    </section>
+
+    <section class="negative fade-in">
+      <h2>Negative Effects</h2>
+      <ul>
+        <li>Overdependence on digital devices</li>
+        <li>Privacy concerns and cybercrime</li>
+        <li>Job losses due to automation</li>
+        <li>Social isolation and mental health issues</li>
+      </ul>
+      <img src="images/sd.jpg" alt="Negative Effects" />
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Tech & Society Group</p>
+  </footer>
+
+  <script>
+    // Fade-in animation on scroll
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
